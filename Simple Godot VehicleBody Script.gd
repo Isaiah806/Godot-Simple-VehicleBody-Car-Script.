@@ -18,5 +18,7 @@ func _physics_process(delta):
   #increasing speed#
   if (engine_force >= 80):
     engine_force = Input.get_axis("ul_up", "ul_down") * engine_speed * delta
-  elif (engine_force > 120):
+  elif (engine_force >= 120):
     engine_force = Input.get_axis("ul_up", "ul_down") * max_engine_speed * delta
+  else:
+    engine_force = 0
